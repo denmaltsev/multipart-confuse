@@ -32,4 +32,10 @@ public class UserController extends ControllerAbs {
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+    @ResponseStatus(code = HttpStatus.OK)
+    @DeleteMapping(path = "users/{name}")
+    public void deleteUserByName(@PathVariable("name") String name) {
+        userService.deleteUser(name);
+    }
 }

@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     @Override
     List<UserEntity> findAll();
+
+    void deleteByName(String name);
 }
