@@ -9,3 +9,9 @@ get {
   body: none
   auth: none
 }
+
+tests {
+  test("response statuc should be 200", function(){
+    expect(res.status).be.equal(200);
+  })
+}

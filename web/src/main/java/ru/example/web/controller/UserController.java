@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 public class UserController extends ControllerAbs {
+    public static final String URI_WITH_USER_NAME_PARAM = "users/{name}";
 
     private final UserService userService;
 
@@ -18,12 +19,12 @@ public class UserController extends ControllerAbs {
     }
 
     @ResponseStatus(code = HttpStatus.CREATED)
-    @PostMapping(path = "users/{name}")
+    @PostMapping(path = URI_WITH_USER_NAME_PARAM)
     public void saveUser(@PathVariable("name") String name) {
         userService.saveUser(name);
     }
 
-    @GetMapping(path = "users/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = URI_WITH_USER_NAME_PARAM, produces = MediaType.APPLICATION_JSON_VALUE)
     public User getUserByName(@PathVariable("name") String name) {
         return userService.getUserByName(name);
     }
@@ -34,7 +35,7 @@ public class UserController extends ControllerAbs {
     }
 
     @ResponseStatus(code = HttpStatus.OK)
-    @DeleteMapping(path = "users/{name}")
+    @DeleteMapping(path = URI_WITH_USER_NAME_PARAM)
     public void deleteUserByName(@PathVariable("name") String name) {
         userService.deleteUser(name);
     }
