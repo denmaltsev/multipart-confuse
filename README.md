@@ -1,10 +1,19 @@
-Состояние проекта:   
-![Состояние Amplicode Explorer](doc/img/Спроект%20только%20создан.%20Apmlicode%20Explorer%20и%20параметры%20плагина%20в%20папке%20IDE.png)
+Версия плагина: 2024.3.1-243-EAP   
+Версия IDE: Build #IC-243.23654.153, built on January 23, 2025
 
-- созданы модули проекта
-- настроено вручную соединение с БД в модуле db   
-  При попытке настроить соединение с БД из Explorer настройки не сохраняются в параметрах приложения.
-  application.property находится в модуле "spring".
-  Файл amplicode.xml создался только после ручной настройки БД и обновления дерева проекта в Apmlicode Explorer
-- rest точки вызова операций не отображаются
-    
+Состояние проекта:   
+![Состояние Amplicode Explorer](doc/img/Состояние%20после%20удаления%20папки%20idea%20и%20amplicode.xml.png)   
+В Amplicode Explorer, в секции настроек, исчезло соединение с БД
+
+Порядок действий:
+- Закрыть все окна IDE
+- В папке проекта удалить:
+  - папку .idea
+  - файл amplicode.xml
+- Переименовать файл параметров проекта:
+  ```shell
+  mv spring/src/main/resources/application.property spring/src/main/resources/application-dev.property
+  ```
+- Запуск IDE
+- Добавление профиля dev в параметры запуска
+- Обновление дерева параметров в Amplicode Explorer
