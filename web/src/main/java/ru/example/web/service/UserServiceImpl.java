@@ -41,4 +41,10 @@ public class UserServiceImpl implements UserService {
         log.info("Save user with name '{}'", name);
         repository.save(new UserEntity(name));
     }
+
+    @Override
+    public void deleteUser(String name) {
+        log.info("Delete user by name '{}'", name);
+        repository.deleteByName(name);
+    }
 }

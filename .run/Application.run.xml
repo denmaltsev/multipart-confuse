@@ -4,9 +4,10 @@
     <module name="spring" />
     <option name="profiles">
       <list>
-        <option value="" />
+        <option value="dev" />
       </list>
     </option>
+    <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
